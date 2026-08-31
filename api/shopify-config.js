@@ -4,7 +4,7 @@
 // shop's *.myshopify.com domain returned by Shopify OAuth. Keep the latter in
 // VITE_SHOPIFY_STORE (or SHOPIFY_STORE) once the app is connected.
 
-export const SHOPIFY_API_VERSION = '2025-10'
+export const SHOPIFY_API_VERSION = '2026-07'
 export const JELLYLAND_DOMAIN = 'jellylandusa.com'
 
 export function getShopDomain() {
