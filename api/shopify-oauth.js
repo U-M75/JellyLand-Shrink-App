@@ -151,7 +151,7 @@ export default async function handler(req, res) {
     return sendPage(res, 400, 'Wrong Shopify shop', `<p class="err">This app is configured for <strong>${escapeHtml(configuredShop)}</strong>, not <strong>${escapeHtml(requestedShop)}</strong>.</p>`)
   }
 
-  const state = crypto.randomBytes(32).toString('hex')
+  const oauthState = crypto.randomBytes(32).toString('hex')
   const scopes = (process.env.SHOPIFY_OAUTH_SCOPES || DEFAULT_SCOPES.join(','))
     .split(',').map(s => s.trim()).filter(Boolean).join(',')
 
@@ -159,9 +159,9 @@ export default async function handler(req, res) {
   authorize.searchParams.set('client_id', clientId)
   authorize.searchParams.set('scope', scopes)
   authorize.searchParams.set('redirect_uri', redirectUri)
-  authorize.searchParams.set('state', state)
+  authorize.searchParams.set('state', oauthState)
 
   const secure = String(redirectUri).startsWith('https://') ? '; Secure' : ''
-  res.setHeader('Set-Cookie', `shopify_oauth_state=${encodeURIComponent(state)}; HttpOnly; Path=/; Max-Age=600; SameSite=Lax${secure}`)
+  res.setHeader('Set-Cookie', `shopify_oauth_state=${encodeURIComponent(oauthState)}; HttpOnly; Path=/; Max-Age=600; SameSite=Lax${secure}`)
   return res.redirect(302, authorize.toString())
 }
