@@ -62,7 +62,7 @@ export default function Login({ onLogin }) {
         <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--brown-light)', marginBottom: '8px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Your name</div>
         <input
           type="text" value={name} onChange={e => { setName(e.target.value); setError('') }}
-          placeholder="e.g. Roxy" autoComplete="off"
+          placeholder="e.g. Your name" autoComplete="off"
           onKeyDown={e => { if (e.key === 'Enter') document.getElementById('pin-0')?.focus() }}
           style={{ width: '100%', padding: '12px 14px', border: `1.5px solid ${error && !name.trim() ? 'var(--red)' : 'var(--gray-200)'}`, borderRadius: '12px', fontSize: '15px', fontWeight: '600', color: 'var(--brown)', outline: 'none', marginBottom: '22px', boxSizing: 'border-box', background: 'var(--gray-50)' }}
         />
