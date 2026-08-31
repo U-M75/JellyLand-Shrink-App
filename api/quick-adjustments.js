@@ -16,7 +16,7 @@ function getSupabase() {
 }
 
 async function shopifyGraphQL(store, token, query, variables = {}) {
-  const resp = await fetch(`https://${store}/admin/api/2025-10/graphql.json`, {
+  const resp = await fetch(`https://${store}/admin/api/2026-07/graphql.json`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': token },
     body: JSON.stringify({ query, variables }),
