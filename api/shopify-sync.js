@@ -8,7 +8,7 @@
 // Requires SHOPIFY_ACCESS_TOKEN (same var as the rest of the app) to include the
 // write_inventory scope. If the current token only has read scopes, this will
 // fail with a Shopify permission error — see README for how to add the scope
-// via the Partner Dashboard OAuth flow (C-Quark app), same pattern used for the
+// via the Partner Dashboard OAuth flow (JellyLand app), same pattern used for the
 // other Jellyland automations.
 
 import { createClient } from '@supabase/supabase-js'
@@ -18,7 +18,7 @@ function getSupabase() {
 }
 
 async function shopifyGraphQL(store, token, query, variables = {}) {
-  const resp = await fetch(`https://${store}/admin/api/2025-10/graphql.json`, {
+  const resp = await fetch(`https://${store}/admin/api/2026-07/graphql.json`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': token },
     body: JSON.stringify({ query, variables }),
