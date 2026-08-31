@@ -1,0 +1,40 @@
+/* Jellyland Brand Colors from logo */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink: #F2BCCC;
+  --pink-light: #FDF0F4;
+  --pink-mid: #F7D4DF;
+  --brown: #6B3F2A;
+  --brown-light: #9B6B52;
+  --blue: #7EC8D8;
+  --blue-light: #E8F6F9;
+  --blue-dark: #4A9BAB;
+  --green: #6BBF8E;
+  --green-light: #E8F5EE;
+  --green-dark: #3A8A5E;
+  --red: #D05A5A;
+  --red-light: #FCEAEA;
+  --gray-50: #FDFBF9;
+  --gray-100: #F5F0EC;
+  --gray-200: #E8DDD6;
+  --gray-400: #B09080;
+  --gray-700: #6B5040;
+  --gray-900: #3D2010;
+  --border: 0.5px solid #E8DDD6;
+  --radius: 14px;
+  --radius-sm: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color: var(--gray-900);
+  background: var(--gray-50);
+  -webkit-font-smoothing: antialiased;
+}
+
+body { min-height: 100dvh; }
+#root { min-height: 100dvh; display: flex; flex-direction: column; }
+button { cursor: pointer; font-family: inherit; }
+input, select { font-family: inherit; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 2px; }
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
